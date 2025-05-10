@@ -16,7 +16,6 @@ Imports:
     dplyr,
     foreach,
     doParallel,
-    MASS,
     ggplot2,
     tidyr,
     parallel,

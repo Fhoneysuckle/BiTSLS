@@ -87,7 +87,7 @@ compare_algorithm_with_r <- function(data, x_var, y_var, z_var, w_var,
       results <- foreach::foreach(
         i = 1:num_iterations,
         .combine = 'cbind',
-        .packages = c("MASS", "stats")
+        .packages = c("stats")
       ) %dopar% {
         # Bootstrap resampling
         set.seed(123 + i)
@@ -136,8 +136,8 @@ process_simulation_results <- function(results, R_combinations) {
     current_data <- results[[r_idx]]
 
     temp_df <- data.frame(
-      R_w = R_combinations[[r_idx]]["R_w"],
-      R_z = R_combinations[[r_idx]]["R_z"],
+      R_w = unname(R_combinations[[r_idx]]["R_w"]),  # 添加 unname()
+      R_z = unname(R_combinations[[r_idx]]["R_z"]),  # 添加 unname()
       R_idx = r_idx - 1,  # Index 0 to n
       beta_XY = current_data[1, ],
       beta_YX = current_data[2, ]
