@@ -1,0 +1,30 @@
+Package: BiTSLS
+Type: Package
+Title: Bi-Directional Two-Stage Least Squares Estimation
+Version: 0.1.0
+Authors@R: 
+    person("Jiaqi Min", email = "fhoneysuckle7@gmail.com", role = c("aut", "cre"))
+Description: Implements bi-directional Two-Stage Least Squares (Bi-TSLS) method 
+    for estimating causal effects in both directions between variables, using 
+    proxy variables. This approach allows for sensitivity analysis across different 
+    parameter values and enables the identification of reciprocal causal relationships. 
+    The package provides functions for estimation, simulation, and visualization of results.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    dplyr,
+    foreach,
+    doParallel,
+    MASS,
+    ggplot2,
+    tidyr,
+    parallel,
+    stats,
+    scales,
+    magrittr
+Suggests:
+    testthat,
+    knitr,
+    rmarkdown
+RoxygenNote: 7.3.1
